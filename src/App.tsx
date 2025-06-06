@@ -1,7 +1,7 @@
 import React from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
 import { AppBar, Toolbar, Button, Box } from '@mui/material';
-import logo from './assets/logo1.png';  // Importa tu logo
+import logo from '../src/assets/logo1.png';
 
 import Home from './pages/Home';
 import Services from './pages/Services';

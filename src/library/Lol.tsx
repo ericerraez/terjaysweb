@@ -10,12 +10,14 @@ import {
   ThemeProvider,
   Chip,
   Stack,
+  useTheme,
 } from "@mui/material";
 import Brightness4Icon from "@mui/icons-material/Brightness4";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
 import { motion } from "framer-motion";
 import { animateScroll as scroll } from "react-scroll";
 import Footer from "../components/Footer";
+import BuyButton from "../components/BuyButton";
 
 // Imágenes para productos LOL
 import lolModel1 from "../assets/Products/lolmodel1.png";
@@ -85,6 +87,94 @@ const products = [
 // Extraer todos los tags únicos de los productos
 const allTags = Array.from(new Set(products.flatMap(product => product.tags || [])));
 
+interface ProductDetailPanelProps {
+  product: typeof products[0];
+  onClose: () => void;
+  innerRef: React.RefObject<HTMLDivElement | null>;
+}
+
+const ProductDetailPanel: React.FC<ProductDetailPanelProps> = ({ product, onClose, innerRef }) => {
+  const theme = useTheme();
+
+  return (
+    <Box
+      ref={innerRef}
+      sx={{
+        position: "fixed",
+        top: 0,
+        right: 0,
+        width: { xs: "100%", sm: 360 },
+        height: "100%",
+        bgcolor: theme.palette.background.paper,
+        boxShadow: "-2px 0 15px rgba(0,0,0,0.5)",
+        p: 4,
+        overflowY: "auto",
+        zIndex: 1500,
+        display: "flex",
+        flexDirection: "column",
+        gap: 2,
+      }}
+    >
+      <Typography
+        variant="h4"
+        sx={{ fontWeight: "bold", mb: 1, color: theme.palette.primary.main }}
+      >
+        {product.name}
+      </Typography>
+      <img
+        src={product.image}
+        alt={product.name}
+        style={{
+          width: "100%",
+          borderRadius: 14,
+          marginBottom: 16,
+          boxShadow: `0 0 20px 5px ${theme.palette.primary.main}`,
+          objectFit: "contain",
+          maxHeight: 220,
+        }}
+      />
+      <Typography variant="body1" sx={{ mb: 2 }}>
+        {product.description}
+      </Typography>
+      <Typography variant="subtitle1" sx={{ fontWeight: "bold", mb: 1 }}>
+        Características:
+      </Typography>
+      <ul style={{ paddingLeft: 20, marginBottom: 20 }}>
+        {product.characteristics.map((c, idx) => (
+          <li key={idx}>
+            <Typography variant="body2" color="text.secondary">
+              {c}
+            </Typography>
+          </li>
+        ))}
+      </ul>
+
+      <Typography
+        variant="h5"
+        sx={{
+          fontWeight: "bold",
+          color: theme.palette.primary.main,
+          mb: 3,
+        }}
+      >
+        Precio: ${product.price}
+      </Typography>
+
+      <BuyButton 
+        productName={product.name} 
+        price={product.price}
+      />
+
+      <Button
+        sx={{ mt: 3, color: theme.palette.text.secondary }}
+        onClick={onClose}
+      >
+        Cerrar
+      </Button>
+    </Box>
+  );
+};
+
 const Lol: React.FC = () => {
   const [mode, setMode] = useState<"light" | "dark">("dark");
   const [selectedProduct, setSelectedProduct] = useState<typeof products[0] | null>(null);
@@ -97,7 +187,6 @@ const Lol: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    // Cerrar panel si se hace clic fuera
     const handleClickOutside = (event: MouseEvent) => {
       if (panelRef.current && !panelRef.current.contains(event.target as Node)) {
         setSelectedProduct(null);
@@ -119,13 +208,12 @@ const Lol: React.FC = () => {
 
   const handleFilterClick = (tag: string) => {
     if (activeFilter === tag) {
-      setActiveFilter(null); // Si ya está activo, lo desactiva
+      setActiveFilter(null);
     } else {
-      setActiveFilter(tag); // Activa el filtro
+      setActiveFilter(tag);
     }
   };
 
-  // Filtrar productos basado en el filtro activo
   const filteredProducts = activeFilter 
     ? products.filter(product => product.tags?.includes(activeFilter))
     : products;
@@ -133,7 +221,7 @@ const Lol: React.FC = () => {
   const theme = createTheme({
     palette: {
       mode,
-      primary: { main: "#007acc" }, // Azul LOL
+      primary: { main: "#007acc" },
       background: {
         default: mode === "dark" ? "#121212" : "#fafafa",
         paper: mode === "dark" ? "#1e1e1e" : "#fff",
@@ -357,86 +445,11 @@ const Lol: React.FC = () => {
 
       {/* Panel desplegable producto seleccionado */}
       {selectedProduct && (
-        <Box
-          ref={panelRef}
-          sx={{
-            position: "fixed",
-            top: 0,
-            right: 0,
-            width: { xs: "100%", sm: 360 },
-            height: "100%",
-            bgcolor: theme.palette.background.paper,
-            boxShadow: "-2px 0 15px rgba(0,0,0,0.5)",
-            p: 4,
-            overflowY: "auto",
-            zIndex: 1500,
-            display: "flex",
-            flexDirection: "column",
-            gap: 2,
-          }}
-        >
-          <Typography
-            variant="h4"
-            sx={{ fontWeight: "bold", mb: 1, color: theme.palette.primary.main }}
-          >
-            {selectedProduct.name}
-          </Typography>
-          <img
-            src={selectedProduct.image}
-            alt={selectedProduct.name}
-            style={{
-              width: "100%",
-              borderRadius: 14,
-              marginBottom: 16,
-              boxShadow: `0 0 20px 5px ${theme.palette.primary.main}`,
-              objectFit: "contain",
-              maxHeight: 220,
-            }}
-          />
-          <Typography variant="body1" sx={{ mb: 2 }}>
-            {selectedProduct.description}
-          </Typography>
-          <Typography variant="subtitle1" sx={{ fontWeight: "bold", mb: 1 }}>
-            Características:
-          </Typography>
-          <ul style={{ paddingLeft: 20, marginBottom: 20 }}>
-            {selectedProduct.characteristics.map((c, idx) => (
-              <li key={idx}>
-                <Typography variant="body2" color="text.secondary">
-                  {c}
-                </Typography>
-              </li>
-            ))}
-          </ul>
-
-          <Typography
-            variant="h5"
-            sx={{
-              fontWeight: "bold",
-              color: theme.palette.primary.main,
-              mb: 3,
-            }}
-          >
-            Precio: ${selectedProduct.price}
-          </Typography>
-
-          <Button
-            variant="contained"
-            color="primary"
-            size="large"
-            sx={{ borderRadius: 5, fontWeight: "bold" }}
-            onClick={() => alert(`¡Gracias por comprar ${selectedProduct.name}!`)}
-          >
-            Comprar
-          </Button>
-
-          <Button
-            sx={{ mt: 3, color: theme.palette.text.secondary }}
-            onClick={() => setSelectedProduct(null)}
-          >
-            Cerrar
-          </Button>
-        </Box>
+        <ProductDetailPanel 
+          product={selectedProduct}
+          onClose={() => setSelectedProduct(null)}
+          innerRef={panelRef}
+        />
       )}
 
       <Footer />
