@@ -1,0 +1,62 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #0f0f0f;
+  height: 100%;
+}
+
+/* Estilo global base */
+.App {
+  text-align: center;
+  background-color: #0f0f0f;
+  color: #ffffff;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Logo con animación elegante */
+.App-logo {
+  height: 30vmin;
+  pointer-events: none;
+  filter: drop-shadow(0 0 10px #00ffff88);
+  transition: transform 0.5s ease-in-out;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Encabezado adaptable */
+.App-header {
+  background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  padding: 2rem;
+}
+
+/* Estilo de enlaces */
+.App-link {
+  color: #00ffff;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.App-link:hover {
+  color: #00cccc;
+}

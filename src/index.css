@@ -1,0 +1,8 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #0f0f0f; /* o el color que quieras de fondo */
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  height: 100%;
+}
