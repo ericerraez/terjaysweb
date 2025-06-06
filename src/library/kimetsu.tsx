@@ -22,6 +22,7 @@ import knyModel1 from "../assets/Products/anime/k1.png";
 import knyModel2 from "../assets/Products/anime/k2.png";
 import knyModel3 from "../assets/Products/lolmodel3.png";
 import knyModel4 from "../assets/Products/anime/k3.png";
+import BuyButton from "../components/BuyButton";
 
 const products = [
   {
@@ -400,43 +401,36 @@ const Kimetsu: React.FC = () => {
           <Typography variant="subtitle1" sx={{ fontWeight: "bold", mb: 1 }}>
             Características:
           </Typography>
-          <ul style={{ paddingLeft: 20, marginBottom: 20 }}>
-            {selectedProduct.characteristics.map((c, idx) => (
-              <li key={idx}>
-                <Typography variant="body2" color="text.secondary">
-                  {c}
-                </Typography>
+          <ul>
+            {selectedProduct.characteristics.map((char, index) => (
+              <li key={index}>
+                <Typography variant="body2">{char}</Typography>
               </li>
             ))}
           </ul>
-
-          <Typography
-            variant="h5"
-            sx={{
-              fontWeight: "bold",
-              color: theme.palette.primary.main,
-              mb: 3,
-            }}
-          >
+          
+          <Typography variant="subtitle1" gutterBottom sx={{ mt: 2 }}>
+            Etiquetas:
+          </Typography>
+          <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1, mb: 2 }}>
+            {selectedProduct.tags.map(tag => (
+              <Chip 
+                key={tag} 
+                label={tag} 
+                color="primary"
+                variant="outlined"
+              />
+            ))}
+          </Box>
+          
+          <Typography variant="h6" sx={{ mt: 2 }}>
             Precio: ${selectedProduct.price}
           </Typography>
-
-          <Button
-            variant="contained"
-            color="primary"
-            size="large"
-            sx={{ borderRadius: 5, fontWeight: "bold" }}
-            onClick={() => alert(`¡Gracias por comprar ${selectedProduct.name}!`)}
-          >
-            Comprar
-          </Button>
-
-          <Button
-            sx={{ mt: 3, color: theme.palette.text.secondary }}
-            onClick={() => setSelectedProduct(null)}
-          >
-            Cerrar
-          </Button>
+          
+          <BuyButton 
+        productName={selectedProduct.name} 
+        price={selectedProduct.price}
+      />
         </Box>
       )}
 

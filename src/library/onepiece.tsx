@@ -27,6 +27,7 @@ import model3 from "../assets/Products/model3.png";
 import model5 from "../assets/Products/model5.png";
 import model6 from "../assets/Products/model6.png";
 import ghost1 from "../assets/Products/ghost1.png";
+import BuyButton from "../components/BuyButton";
 
 interface Product {
   id: number;
@@ -731,23 +732,10 @@ const Onepiece: React.FC = () => {
           </Box>
 
           {/* Botón Comprar - Reclamar tesoro */}
-          <Button
-            variant="contained"
-            color="primary"
-            size="large"
-            sx={{ 
-              mt: "auto",
-              fontFamily: "'Pirata One', cursive",
-              fontSize: "1.2rem",
-              background: `linear-gradient(45deg, ${theme.palette.primary.main}, ${theme.palette.secondary.main})`,
-              '&:hover': {
-                background: `linear-gradient(45deg, ${theme.palette.secondary.main}, ${theme.palette.primary.main})`,
-              }
-            }}
-            onClick={() => alert(`¡Has reclamado el tesoro: ${selectedProduct.name} por ${selectedProduct.price} Berries!`)}
-          >
-            Reclamar - {selectedProduct.price} Berries
-          </Button>
+         <BuyButton 
+        productName={selectedProduct.name} 
+        price={selectedProduct.price}
+      />
         </Box>
       )}
 

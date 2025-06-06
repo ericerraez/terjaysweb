@@ -23,6 +23,7 @@ import banner1 from "../assets/pokemon.avif";
 import model1 from "../assets/Products/p1.png";
 import model2 from "../assets/Products/model2.png";
 import model3 from "../assets/Products/model3.png";
+import BuyButton from "../components/BuyButton";
 
 interface Product {
   id: number;
@@ -403,15 +404,11 @@ const Pokemon: React.FC = () => {
           <Typography variant="h6" sx={{ mt: 2 }}>
             Precio: ${selectedProduct.price}
           </Typography>
-          <Button
-            fullWidth
-            variant="contained"
-            color="primary"
-            sx={{ mt: 3 }}
-            onClick={() => alert("¡Gracias por tu interés! Pronto podrás comprar.")}
-          >
-            Comprar
-          </Button>
+          
+          <BuyButton 
+        productName={selectedProduct.name} 
+        price={selectedProduct.price}
+      />
         </Box>
       )}
 

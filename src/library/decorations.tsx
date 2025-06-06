@@ -24,6 +24,7 @@ import { motion } from "framer-motion";
 import deco1 from "../assets/Products/Decorative/flor.png";
 import deco2 from "../assets/Products/Decorative/escult.png";
 import deco3 from "../assets/Products/Decorative/macetaar.png";
+import BuyButton from "../components/BuyButton";
 
 const decorations = [
   {
@@ -380,9 +381,10 @@ const Decorations: React.FC = () => {
               ${selectedItem.price.toFixed(2)}
             </Typography>
             <Divider sx={{ my: 2 }} />
-            <Button variant="contained" color="primary" fullWidth>
-              Comprar ahora
-            </Button>
+            <BuyButton 
+        productName={selectedItem.name} 
+        price={selectedItem.price}
+      />
           </>
         )}
       </Drawer>

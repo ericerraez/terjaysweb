@@ -23,6 +23,7 @@ import narutoModel1 from "../assets/Products/anime/n1.png";
 import narutoModel2 from "../assets/Products/anime/n2.png";
 import narutoModel3 from "../assets/Products/anime/n3.png";
 import narutoModel4 from "../assets/Products/anime/n4.png";
+import BuyButton from "../components/BuyButton";
 
 const products = [
   {
@@ -432,12 +433,10 @@ const Naruto: React.FC = () => {
             Comprar
           </Button>
 
-          <Button
-            sx={{ mt: 3, color: theme.palette.text.secondary }}
-            onClick={() => setSelectedProduct(null)}
-          >
-            Cerrar
-          </Button>
+          <BuyButton 
+        productName={selectedProduct.name} 
+        price={selectedProduct.price}
+      />
         </Box>
       )}
 

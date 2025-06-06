@@ -19,6 +19,7 @@ import Brightness4Icon from "@mui/icons-material/Brightness4";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
 import { motion } from "framer-motion";
 import Footer from "../components/Footer";
+import BuyButton from "../components/BuyButton";
 
 type PokemonType = string;
 
@@ -300,14 +301,15 @@ const Pokedex: React.FC = () => {
                   />
                 ))}
               </Box>
-              <Button variant="contained" sx={{ mt: 2 }} onClick={() => alert("Añadido al carrito (ejemplo)")}>
-                Comprar
-              </Button>
-            </>
-          ) : (
-            <Typography>No hay Pokémon seleccionado</Typography>
-          )}
-        </Drawer>
+            <BuyButton 
+              productName={selectedPokemon.name} 
+              price={PRODUCT_DETAILS[selectedPokemon.id]?.price ?? 0}
+            />
+          </>
+        ) : (
+          <Typography>No hay Pokémon seleccionado</Typography>
+        )}
+      </Drawer>
       </Container>
       <Footer />
     </ThemeProvider>

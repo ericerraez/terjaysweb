@@ -20,6 +20,7 @@ import mc1 from "../assets/Products/mc1.png";
 import mc2 from "../assets/Products/mc2.png";
 import mc3 from "../assets/Products/mc3.png";
 import mc4 from "../assets/Products/mc4.png";
+import BuyButton from "../components/BuyButton";
 
 interface Product {
   id: number;
@@ -453,39 +454,10 @@ const Minecraft: React.FC = () => {
               ))}
             </Box>
           </Box>
-
-          <Typography 
-            variant="h5" 
-            sx={{ 
-              mt: "auto", 
-              fontWeight: "bold", 
-              color: theme.palette.primary.main 
-            }}
-          >
-            ${selectedProduct.price} USD
-          </Typography>
-
-          <Box sx={{ mt: 3 }}>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              style={{
-                backgroundColor: theme.palette.primary.main,
-                color: "#fff",
-                border: "none",
-                borderRadius: 8,
-                padding: "12px 20px",
-                fontSize: 16,
-                cursor: "pointer",
-                fontWeight: "bold",
-                textTransform: "uppercase",
-                width: "100%",
-              }}
-              onClick={() => alert(`¡Gracias por tu interés en comprar ${selectedProduct.name}!`)}
-            >
-              Comprar
-            </motion.button>
-          </Box>
+          <BuyButton 
+        productName={selectedProduct.name} 
+        price={selectedProduct.price}
+      />
         </Box>
       )}
 

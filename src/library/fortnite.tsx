@@ -23,6 +23,7 @@ import model2 from "../assets/Products/fortmodel2.png";
 import model3 from "../assets/Products/fortmodel3.png";
 import model4 from "../assets/Products/fortmodel4.png";
 import model5 from "../assets/Products/fortmodel5.png";
+import BuyButton from "../components/BuyButton";
 
 const banners = [banner1, banner2];
 
@@ -546,15 +547,10 @@ const Fornite: React.FC = () => {
           >
             Precio: ${selectedProduct.price}
           </Typography>
-          <Button
-            variant="contained"
-            color="secondary"
-            size="large"
-            sx={{ mt: 3, borderRadius: 6 }}
-            onClick={() => alert(`Añadido ${selectedProduct.name} al carrito`)}
-          >
-            Comprar
-          </Button>
+          <BuyButton 
+        productName={selectedProduct.name} 
+        price={selectedProduct.price}
+      />
         </Box>
       )}
 

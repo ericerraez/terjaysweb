@@ -26,6 +26,7 @@ import model6 from "../assets/Products/model6.png";
 
 // Galerías
 import ghost1 from "../assets/Products/ghost1.png";
+import BuyButton from "../components/BuyButton";
 
 const banners = [banner1, banner2];
 
@@ -760,24 +761,36 @@ const Valorant: React.FC = () => {
           >
             Características:
           </Typography>
-          <Box component="ul" sx={{ pl: 3, mb: 3 }}>
-            {selectedProduct.characteristics.map((charac, idx) => (
-              <li key={idx}>
-                <Typography variant="body2">{charac}</Typography>
+          <ul>
+            {selectedProduct.characteristics.map((char, index) => (
+              <li key={index}>
+                <Typography variant="body2">{char}</Typography>
               </li>
             ))}
+          </ul>
+          
+          <Typography variant="subtitle1" gutterBottom sx={{ mt: 2 }}>
+            Etiquetas:
+          </Typography>
+          <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1, mb: 2 }}>
+            {selectedProduct.tags.map(tag => (
+              <Chip 
+                key={tag} 
+                label={tag} 
+                color="primary"
+                variant="outlined"
+              />
+            ))}
           </Box>
-
-          {/* Botón Comprar */}
-          <Button
-            variant="contained"
-            color="primary"
-            size="large"
-            sx={{ mt: "auto" }}
-            onClick={() => alert(`Has comprado: ${selectedProduct.name} por $${selectedProduct.price}`)}
-          >
-            Comprar - ${selectedProduct.price}
-          </Button>
+          
+          <Typography variant="h6" sx={{ mt: 2 }}>
+            Precio: ${selectedProduct.price}
+          </Typography>
+          
+          <BuyButton 
+        productName={selectedProduct.name} 
+        price={selectedProduct.price}
+      />
         </Box>
       )}
 

@@ -20,6 +20,7 @@ import dbzBanner from "../assets/dbz.jpg";
 // Imágenes para productos DBZ (deberás reemplazar estas rutas con tus imágenes reales)
 import db1 from "../assets/Products/anime/db1.png";
 import db2 from "../assets/Products/anime/db2.png"
+import BuyButton from "../components/BuyButton";
 
 
 const products = [
@@ -392,22 +393,10 @@ const Dbz: React.FC = () => {
             Precio: ${selectedProduct.price}
           </Typography>
 
-          <Button
-            variant="contained"
-            color="primary"
-            size="large"
-            sx={{ borderRadius: 5, fontWeight: "bold" }}
-            onClick={() => alert(`¡Gracias por comprar ${selectedProduct.name}!`)}
-          >
-            Comprar
-          </Button>
-
-          <Button
-            sx={{ mt: 3, color: theme.palette.text.secondary }}
-            onClick={() => setSelectedProduct(null)}
-          >
-            Cerrar
-          </Button>
+          <BuyButton 
+        productName={selectedProduct.name} 
+        price={selectedProduct.price}
+      />
         </Box>
       )}
 
