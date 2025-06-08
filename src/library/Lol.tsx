@@ -82,6 +82,35 @@ const products = [
     ],
     tags: ["util", "poro"],
   },
+  {
+    id: 5,
+    name: "Minion Rojo",
+    description:
+      "En la Grieta del Invocador, los Minions son los soldados leales que luchan por el nexo. Este modelo captura la esencia de esos pequeños guerreros que, aunque a menudo pasan desapercibidos, son esenciales en cada batalla. Un homenaje a su valentía y sacrificio.",
+    price: 7,
+    image: "https://res.cloudinary.com/dyqvus6nm/image/upload/v1749269723/Screenshot_2025-06-06_231501_nvneeb.png",
+    characteristics: [
+      "Material: PLA PLUS",
+      "Colores: Rojo, Negro, Blanco",
+      "Tamaño: 163, 153, 10 mm",
+    ],
+    tags: ["grieta", "minion"],
+  },
+  {
+    id: 6,
+    name: "Miss Fortune",
+    description:
+      "Desde las frías montañas de Freljord hasta tu cocina. Los Poros son criaturas adorables, símbolo de compañía y valentía. Ahora puedes hornear tus propias delicias con forma del compañero más querido de League of Legends.",
+    price: 7,
+    image: "https://res.cloudinary.com/dyqvus6nm/image/upload/v1749269723/Screenshot_2025-06-06_231003_ju5pvt.png",
+    characteristics: [
+      "Material: PLA PLUS",
+      "Colores: Gris",
+      "Tamaño: 163, 153, 10 mm",
+    ],
+    tags: ["util", "figura"],
+    gallery: ["https://res.cloudinary.com/dyqvus6nm/image/upload/v1749268483/Screenshot_2025-06-06_225432_mr8mgt.png", "https://res.cloudinary.com/dyqvus6nm/image/upload/v1749268605/Screenshot_2025-06-06_225634_xnqhll.png"],
+  },
 ];
 
 // Extraer todos los tags únicos de los productos

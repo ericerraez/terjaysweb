@@ -29,6 +29,7 @@ import marvelImg from '../assets/marvel.jpeg';
 import dcImg from '../assets/dc.avif';
 import strangerthingsImg from '../assets/Stranger_Things.png';
 import pokemonImg from '../assets/pokemon.avif';
+import sdImg from '../assets/sd.png';
 
 const Printing = () => {
   const [mode, setMode] = useState<'light' | 'dark'>('dark');
@@ -303,11 +304,12 @@ const Printing = () => {
   };
 
   const imageButtons = [
-  { label: 'Decoración', img: decoracionImg, route: '/library/decorations' },
-  { label: 'Herramientas', img: herramientasImg, route: '/tools' },
-  { label: 'Gadgets', img: gadgetsImg, route: '/gadgets' },
-  { label: 'Temporada', img: popularImg, route: '/library/season' },
-];
+    { label: 'Decoración', img: decoracionImg, route: '/library/decorations' },
+    { label: 'Herramientas', img: herramientasImg, route: '/tools' },
+    { label: 'Gadgets', img: gadgetsImg, route: '/gadgets' },
+    { label: 'Días Especiales', img: sdImg, route: '/library/OcasionesEspeciales' }, // <-- CORREGIDO
+    { label: 'Temporada', img: popularImg, route: '/library/season' },
+  ];
 
 
   return (

@@ -13,6 +13,8 @@ import Rendering from './services/Rendering';
 import Software from './services/Software';
 
 import Decorations from './library/decorations';
+import Special from './library/OcasionesEspeciales';
+
 
 import Valorant from './library/Valorant';
 import Lol from './library/Lol';
@@ -60,7 +62,7 @@ const App: React.FC = () => {
           <Button color="inherit" component={Link} to="/contact">
             Contacto
           </Button>
-        </Toolbar>
+        </Toolbar>  
       </AppBar>
 
       <Box sx={{ px: 2 }}>
@@ -74,6 +76,8 @@ const App: React.FC = () => {
           <Route path='/rendering' element={<Rendering />} />
           <Route path='/software' element={< Software/>} />
           <Route path='/library/decorations' element={<Decorations />} />
+          <Route path='/library/OcasionesEspeciales' element={<Special />} />
+
 
           {/* Rutas de la biblioteca de juegos */}
 
