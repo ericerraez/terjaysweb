@@ -306,7 +306,7 @@ const Printing = () => {
   const imageButtons = [
     { label: 'Decoración', img: decoracionImg, route: '/library/decorations' },
     { label: 'Herramientas', img: herramientasImg, route: '/tools' },
-    { label: 'Gadgets', img: gadgetsImg, route: '/gadgets' },
+    { label: 'Gadgets', img: gadgetsImg, route: '/library/gadgets' },
     { label: 'Días Especiales', img: sdImg, route: '/library/OcasionesEspeciales' }, // <-- CORREGIDO
     { label: 'Temporada', img: popularImg, route: '/library/season' },
   ];

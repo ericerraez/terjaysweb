@@ -314,10 +314,10 @@ const OCCASION_PRODUCTS = [
     occasion: "Día del Padre"
   },
   {
-    id: 22,
+    id: 23,
     name: "Soporte para Celular Regulable",
     description: "Soporte para smartphone regulable",
-    price: 9.75,
+    price: 3.25,
     image: "https://res.cloudinary.com/dyqvus6nm/image/upload/v1749382343/Screenshot_2025-06-08_063216_sybvcd.png",
     characteristics: [
       "Material: PLA +",
