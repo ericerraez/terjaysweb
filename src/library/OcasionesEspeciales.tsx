@@ -141,6 +141,9 @@ const OcasionesEspeciales: React.FC = () => {
   }, [selectedProduct]);
 
   useEffect(() => {
+    // Cuando cambias de producto, cierra el lightbox y resetea el índice
+    setLightboxOpen(false);
+    setLightboxIndex(0);
     if (selectedProduct) {
       setSelectedImage(selectedProduct.image);
     }
@@ -170,6 +173,12 @@ const OcasionesEspeciales: React.FC = () => {
     setSelectedImage(img);
     setLightboxIndex(index);
     setLightboxOpen(true);
+  };
+
+  // Cuando cierras el panel de detalles, también cierra el lightbox
+  const handleCloseProduct = () => {
+    setSelectedProduct(null);
+    setLightboxOpen(false);
   };
 
   return (
@@ -813,7 +822,7 @@ const OcasionesEspeciales: React.FC = () => {
                 {selectedProduct.name}
               </Typography>
               <IconButton
-                onClick={() => setSelectedProduct(null)}
+                onClick={handleCloseProduct}
                 sx={{
                   color: mode === 'dark' ? '#fff' : '#9C27B0',
                   '&:hover': {
