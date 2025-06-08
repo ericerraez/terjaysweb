@@ -23,9 +23,9 @@ import Brightness7Icon from "@mui/icons-material/Brightness7";
 import ClearIcon from "@mui/icons-material/Clear";
 import { motion, AnimatePresence } from "framer-motion";
 import { animateScroll as scroll } from "react-scroll";
-import 'react-image-lightbox/style.css';
 import BuyButton from "../components/BuyButton";
-import Lightbox from "react-image-lightbox";
+import 'yet-another-react-lightbox/styles.css';
+import Lightbox from 'yet-another-react-lightbox';
 
 // Datos de productos movidos a un archivo separado (mejor práctica)
 import OCCASION_PRODUCTS from "../library/data/occasionProducts";
@@ -986,32 +986,17 @@ const OcasionesEspeciales: React.FC = () => {
       {/* Lightbox para galería */}
       {lightboxOpen && selectedProduct && (
         <Lightbox
-          mainSrc={[selectedProduct.image, ...selectedProduct.gallery][lightboxIndex]}
-          nextSrc={
-            [selectedProduct.image, ...selectedProduct.gallery][
-              (lightboxIndex + 1) % ([selectedProduct.image, ...selectedProduct.gallery].length)
-            ]
-          }
-          prevSrc={
-            [selectedProduct.image, ...selectedProduct.gallery][
-              (lightboxIndex + [selectedProduct.image, ...selectedProduct.gallery].length - 1) %
-                ([selectedProduct.image, ...selectedProduct.gallery].length)
-            ]
-          }
-          onCloseRequest={() => setLightboxOpen(false)}
-          onMovePrevRequest={() =>
-            setLightboxIndex(
-              (lightboxIndex + [selectedProduct.image, ...selectedProduct.gallery].length - 1) %
-                ([selectedProduct.image, ...selectedProduct.gallery].length)
-            )
-          }
-          onMoveNextRequest={() =>
-            setLightboxIndex(
-              (lightboxIndex + 1) % ([selectedProduct.image, ...selectedProduct.gallery].length)
-            )
-          }
-          imageTitle={selectedProduct.name}
-          imageCaption={selectedProduct.description}
+          open={lightboxOpen}
+          close={() => setLightboxOpen(false)}
+          slides={[selectedProduct.image, ...selectedProduct.gallery].map((img) => ({
+            src: img,
+            title: selectedProduct.name,
+            description: selectedProduct.description,
+          }))}
+          index={lightboxIndex}
+          on={{
+            view: ({ index }) => setLightboxIndex(index),
+          }}
         />
       )}
     </ThemeProvider>

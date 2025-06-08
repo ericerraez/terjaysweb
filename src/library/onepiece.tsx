@@ -12,7 +12,7 @@ import {
 } from "@mui/material";
 import Brightness4Icon from "@mui/icons-material/Brightness4";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
-import { motion } from "framer-motion";
+import * as framerMotion from "framer-motion";
 import { animateScroll as scroll } from "react-scroll";
 import Footer from "../components/Footer";
 import banner1 from "../assets/one-piece.avif";
@@ -414,7 +414,7 @@ const Onepiece: React.FC = () => {
           }}
         >
           {filteredProducts.map((product) => (
-            <motion.div
+            <framerMotion.motion.div
               key={product.id}
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
@@ -508,7 +508,7 @@ const Onepiece: React.FC = () => {
                 height: 4,
                 background: `linear-gradient(90deg, ${theme.palette.secondary.main}, ${theme.palette.primary.main})`,
               }} />
-            </motion.div>
+            </framerMotion.motion.div>
           ))}
         </Box>
       </Container>
@@ -541,7 +541,7 @@ const Onepiece: React.FC = () => {
               background: `linear-gradient(90deg, ${theme.palette.primary.main}, ${theme.palette.secondary.main})`,
             }
           }}
-          component={motion.div}
+          component={framerMotion.motion.div}
           initial={{ x: "100%" }}
           animate={{ x: 0 }}
           transition={{ type: "spring", stiffness: 300, damping: 30 }}
