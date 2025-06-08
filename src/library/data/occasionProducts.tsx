@@ -175,9 +175,9 @@ const OCCASION_PRODUCTS = [
   },
   {
     id: 13,
-    name: "Copa inspirada en copa piston de la película Cars, personalizable",
+    name: "Copa piston de la película Cars, personalizable",
     description: "Copa decorativa inspirada en la copa piston de la película Cars",
-    price: 3.75,
+    price: 5.75,
     image: "https://res.cloudinary.com/dyqvus6nm/image/upload/v1749374760/Screenshot_2025-06-08_042528_l0uwoj.png",
     characteristics: [
       "Material: PLA +",
@@ -227,6 +227,104 @@ const OCCASION_PRODUCTS = [
     ],
     tags: ["Papá", "Herramientas"],
     gallery: ["https://res.cloudinary.com/dyqvus6nm/image/upload/v1749377240/Screenshot_2025-06-08_050711_pw7uxh.png", "https://res.cloudinary.com/dyqvus6nm/image/upload/v1749375847/Screenshot_2025-06-08_044357_kxf8rw.png"],
+    occasion: "Día del Padre"
+  },
+  {
+    id: 17,
+    name: "Bandeja con soporte para control remoto",
+    description: "Bandeja decorativa con soporte para control remoto, ideal para mantener el orden en la sala de estar.",
+    price: 14.75,
+    image: "https://res.cloudinary.com/dyqvus6nm/image/upload/v1749379981/Screenshot_2025-06-08_055250_arnpp4.png",
+    characteristics: [
+      "Material: PLA +",
+      "Colores a elección",
+    ],
+    tags: ["Papá", "Utilidad"],
+    gallery: ["https://res.cloudinary.com/dyqvus6nm/image/upload/v1749380517/Screenshot_2025-06-08_060143_gvdj4w.png"],
+    occasion: "Día del Padre"
+  },
+  {
+    id: 18,
+    name: "Soporte dual para mando ",
+    description: "Soporte dual para mando, ideal para mantener organizados los controles de videojuegos.",
+    price: 9.50,
+    image: "https://res.cloudinary.com/dyqvus6nm/image/upload/v1749380706/Screenshot_2025-06-08_060457_j3knrr.png",
+    characteristics: [
+      "Material: PLA +",
+      "Colores a elección",
+    ],
+    tags: ["Papá", "Utilidad","Videojuegos"],
+    gallery: ["hhttps://res.cloudinary.com/dyqvus6nm/image/upload/v1749380762/Screenshot_2025-06-08_060552_kwwq6s.png"],
+    occasion: "Día del Padre"
+  },
+  {
+    id: 19,
+    name: "Soporte paera mando Xbox",
+    description: "Soporte para mando de Xbox, ideal para mantener el control organizado y al alcance.",
+    price: 6,
+    image: "https://res.cloudinary.com/dyqvus6nm/image/upload/v1749381132/Screenshot_2025-06-08_061200_xhsq4o.png",
+    characteristics: [
+      "Material: PLA +",
+      "Colores a elección",
+    ],
+    tags: ["Papá", "Utilidad","Videojuegos"],
+    gallery: ["https://res.cloudinary.com/dyqvus6nm/image/upload/v1749381195/Screenshot_2025-06-08_061305_ziqscd.png"],
+    occasion: "Día del Padre"
+  },
+  {
+    id: 20,
+    name: "Organizador de escritorio para papá",
+    description: "Organizador de escritorio personalizado para papá, ideal para mantener el orden en el espacio de trabajo.",
+    price: 7.75,
+    image: "https://res.cloudinary.com/dyqvus6nm/image/upload/v1749381584/Screenshot_2025-06-08_061934_zdd2yj.png",
+    characteristics: [
+      "Material: PLA +",
+      "Colores a elección",
+    ],
+    tags: ["Papá", "Utilidad","Oficina"],
+    gallery: ["https://res.cloudinary.com/dyqvus6nm/image/upload/v1749381631/Screenshot_2025-06-08_062023_yf93qo.png"],
+    occasion: "Día del Padre"
+  },
+  {
+    id: 21,
+    name: "Soporte de escritorio para Audífonos",
+    description: "Soporte para audifonos pequeño ideal para oficina",
+    price: 2.75,
+    image: "https://res.cloudinary.com/dyqvus6nm/image/upload/v1749381889/Screenshot_2025-06-08_062437_xyozjp.png",
+    characteristics: [
+      "Material: PLA +",
+      "Colores a elección",
+    ],
+    tags: ["Papá", "Utilidad","Oficina"],
+    gallery: ["https://res.cloudinary.com/dyqvus6nm/image/upload/v1749382023/Screenshot_2025-06-08_062655_rpe9ny.png"],
+    occasion: "Día del Padre"
+  },
+  {
+    id: 22,
+    name: "Soporte para Audífonos",
+    description: "Soporte para audifonos moderno",
+    price: 9.75,
+    image: "https://res.cloudinary.com/dyqvus6nm/image/upload/v1749382191/Screenshot_2025-06-08_062920_dpp5sq.png",
+    characteristics: [
+      "Material: PLA +",
+      "Colores a elección",
+    ],
+    tags: ["Papá", "Utilidad","Oficina"],
+    gallery: ["https://res.cloudinary.com/dyqvus6nm/image/upload/v1749382230/Screenshot_2025-06-08_063024_n7pkpt.png"],
+    occasion: "Día del Padre"
+  },
+  {
+    id: 22,
+    name: "Soporte para Celular Regulable",
+    description: "Soporte para smartphone regulable",
+    price: 9.75,
+    image: "https://res.cloudinary.com/dyqvus6nm/image/upload/v1749382343/Screenshot_2025-06-08_063216_sybvcd.png",
+    characteristics: [
+      "Material: PLA +",
+      "Colores a elección",
+    ],
+    tags: ["Papá", "Utilidad","Oficina"],
+    gallery: ["https://res.cloudinary.com/dyqvus6nm/image/upload/v1749382444/Screenshot_2025-06-08_063359_j27qxo.png"],
     occasion: "Día del Padre"
   },
 ];
