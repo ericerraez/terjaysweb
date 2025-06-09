@@ -309,7 +309,7 @@ const Printing = () => {
     { label: 'Gadgets', img: gadgetsImg, route: '/library/gadgets' },
     { label: 'Días Especiales', img: sdImg, route: '/library/OcasionesEspeciales' }, 
     { label: 'Temporada', img: popularImg, route: '/library/season' },
-    { label: 'Arquitectura', img: popularImg, route: '/library/arquitectura' },
+    { label: 'Arquitectura', img: "https://res.cloudinary.com/dyqvus6nm/image/upload/v1749494606/White_and_Blue_Minimal_Clean_Architecture_Presentation_kwkxyp.png", route: '/library/arquitectura' },
 
   ];
 

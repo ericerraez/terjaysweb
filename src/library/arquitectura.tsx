@@ -19,22 +19,10 @@ import {
 import Brightness4Icon from "@mui/icons-material/Brightness4";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
 import { motion } from "framer-motion";
-
 import BuyButton from "../components/BuyButton";
-
-const arquitecturaData = [
-  {
-    id: 1,
-    name: "Flor Ornamental",
-    description:
-      "Flor decorativa impresa en 3D con diseño minimalista, ideal para centros de mesa o repisas modernas.",
-    price: 5,
-    image:
-      "https://cdn.thingiverse.com/renders/ae/fd/04/0e/ba/IMG_6307_display_large.jpg",
-    characteristics: ["Material: PLA", "Color: Blanco mate", "Tamaño: 120x120x100 mm"],
-    tags: ["floral", "minimalista", "decoración"],
-  },
-];
+import arquitecturaData from "./data/arquitecturadata";
+import 'yet-another-react-lightbox/styles.css';
+import Lightbox from 'yet-another-react-lightbox';
 
 const allTags = Array.from(new Set(arquitecturaData.flatMap((d) => d.tags)));
 
@@ -42,6 +30,8 @@ const Arquitectura: React.FC = () => {
   const [mode, setMode] = useState<"light" | "dark">("light");
   const [activeFilter, setActiveFilter] = useState<string | null>(null);
   const [selectedItem, setSelectedItem] = useState<typeof arquitecturaData[0] | null>(null);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
 
   useEffect(() => {
     const saved = localStorage.getItem("decorationsTheme") as "light" | "dark" | null;
@@ -75,6 +65,14 @@ const Arquitectura: React.FC = () => {
       fontFamily: "'Poppins', sans-serif",
     },
   });
+
+  // Cierra el lightbox al cerrar el Drawer
+  useEffect(() => {
+    if (!selectedItem) {
+      setLightboxOpen(false);
+      setLightboxIndex(0);
+    }
+  }, [selectedItem]);
 
   return (
     <ThemeProvider theme={theme}>
@@ -175,7 +173,11 @@ const Arquitectura: React.FC = () => {
             <img
               src={selectedItem.image}
               alt={selectedItem.name}
-              style={{ width: "100%", borderRadius: 8, marginBottom: 16 }}
+              style={{ width: "100%", borderRadius: 8, marginBottom: 16, cursor: "pointer" }}
+              onClick={() => {
+                setLightboxOpen(true);
+                setLightboxIndex(0);
+              }}
             />
             <Typography variant="body1" gutterBottom>
               {selectedItem.description}
@@ -191,6 +193,23 @@ const Arquitectura: React.FC = () => {
           </>
         )}
       </Drawer>
+
+      {/* Lightbox para galería */}
+      {selectedItem && lightboxOpen && (
+        <Lightbox
+          open={lightboxOpen}
+          close={() => setLightboxOpen(false)}
+          slides={selectedItem.gallery.map((img) => ({
+            src: img,
+            title: selectedItem.name,
+            description: selectedItem.description,
+          }))}
+          index={lightboxIndex}
+          on={{
+            view: ({ index }) => setLightboxIndex(index),
+          }}
+        />
+      )}
     </ThemeProvider>
   );
 };
