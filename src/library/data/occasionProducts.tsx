@@ -327,6 +327,20 @@ const OCCASION_PRODUCTS = [
     gallery: ["https://res.cloudinary.com/dyqvus6nm/image/upload/v1749382444/Screenshot_2025-06-08_063359_j27qxo.png"],
     occasion: "Día del Padre"
   },
+  {
+    id: 24,
+    name: "Cartera de tarjetas en cascada",
+    description: "Cartera para tus tarjetas, ideal para llevarlas de una manera mas segura y ordenada",
+    price: 5.25,
+    image: "https://res.cloudinary.com/dyqvus6nm/image/upload/v1749427559/Screenshot_2025-06-08_190524_z8kwf5.png",
+    characteristics: [
+      "Material: PLA +",
+      "Colores a elección",
+    ],
+    tags: ["Papá", "Utilidad"],
+    gallery: ["https://res.cloudinary.com/dyqvus6nm/image/upload/v1749382444/Screenshot_2025-06-08_063359_j27qxo.png"],
+    occasion: "Día del Padre"
+  },
 ];
 
 export default OCCASION_PRODUCTS;
