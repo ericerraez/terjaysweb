@@ -180,7 +180,7 @@ const Pokemon: React.FC = () => {
         }}
         onClick={() => scroll.scrollToTop()}
       >
-        Pokémon 3D Store
+        Pokémon 3D Store, click en la pokedex para ver los pokemon
         <IconButton onClick={toggleMode} color="inherit">
           {mode === "dark" ? <Brightness7Icon /> : <Brightness4Icon />}
         </IconButton>

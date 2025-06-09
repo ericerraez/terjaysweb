@@ -307,8 +307,10 @@ const Printing = () => {
     { label: 'Decoración', img: decoracionImg, route: '/library/decorations' },
     { label: 'Herramientas', img: herramientasImg, route: '/tools' },
     { label: 'Gadgets', img: gadgetsImg, route: '/library/gadgets' },
-    { label: 'Días Especiales', img: sdImg, route: '/library/OcasionesEspeciales' }, // <-- CORREGIDO
+    { label: 'Días Especiales', img: sdImg, route: '/library/OcasionesEspeciales' }, 
     { label: 'Temporada', img: popularImg, route: '/library/season' },
+    { label: 'Arquitectura', img: popularImg, route: '/library/arquitectura' },
+
   ];
 
 

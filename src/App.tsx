@@ -14,7 +14,7 @@ import Software from './services/Software';
 
 import Decorations from './library/decorations';
 import Special from './library/OcasionesEspeciales';
-
+import Arquitectura from './library/arquitectura';
 
 import Valorant from './library/Valorant';
 import Lol from './library/Lol';
@@ -77,6 +77,7 @@ const App: React.FC = () => {
           <Route path='/software' element={< Software/>} />
           <Route path='/library/decorations' element={<Decorations />} />
           <Route path='/library/OcasionesEspeciales' element={<Special />} />
+          <Route path='/library/Arquitectura' element={<Arquitectura />} />
 
 
           {/* Rutas de la biblioteca de juegos */}
