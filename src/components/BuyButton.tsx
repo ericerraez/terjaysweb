@@ -14,7 +14,7 @@ const BuyButton: React.FC<BuyButtonProps> = ({
 }) => {
   const handleClick = () => {
   const phoneNumber = "593999727075";
-  const message = `Hola! Estoy interesado en comprar *${productName}* por $${price}.`;
+  const message = `Hola! Estoy interesado en comprar el siguiente producto: *${productName}* por $${price}.`;
   const encodedMessage = encodeURIComponent(message);
   const url = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}`;
 

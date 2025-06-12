@@ -185,9 +185,44 @@ const Gadgets: React.FC = () => {
             <Typography variant="body2" color="text.secondary">
               {selectedItem.characteristics.join(" | ")}
             </Typography>
-            <Typography variant="h6" color="primary" sx={{ my: 2 }}>
-              ${selectedItem.price.toFixed(2)}
-            </Typography>
+            {/* Galería horizontal (carrete) si hay imágenes */}
+{selectedItem.gallery.length > 0 && (
+  <Box
+    sx={{
+      display: "flex",
+      overflowX: "auto",
+      gap: 1,
+      mb: 2,
+      pb: 1,
+    }}
+  >
+    {selectedItem.gallery.map((img, index) => (
+      <Box
+        key={index}
+        component="img"
+        src={img}
+        alt={`Imagen ${index + 1}`}
+        onClick={() => {
+          setLightboxOpen(true);
+          setLightboxIndex(index);
+        }}
+        sx={{
+          height: 80,
+          width: "auto",
+          borderRadius: 1,
+          cursor: "pointer",
+          border: lightboxIndex === index ? "2px solid" : "1px solid",
+          borderColor: lightboxIndex === index ? "primary.main" : "grey.400",
+        }}
+      />
+    ))}
+  </Box>
+)}
+
+<Typography variant="h6" color="primary" sx={{ my: 2 }}>
+  ${selectedItem.price.toFixed(2)}
+</Typography>
+
             <Divider sx={{ my: 2 }} />
             <BuyButton productName={selectedItem.name} price={selectedItem.price} />
           </>
