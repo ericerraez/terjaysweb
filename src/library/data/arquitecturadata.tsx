@@ -19,7 +19,9 @@ const arquitecturaData: ArquitecturaItem[] = [
     price: 39.99,
     gallery: [
       "https://cdn.thingiverse.com/renders/c3/75/14/da/43/IMG_6323_display_large.jpg",
-      "https://cdn.thingiverse.com/renders/b7/85/a5/d3/a8/IMG_6315_display_large.jpg"
+      "https://cdn.thingiverse.com/renders/b7/85/a5/d3/a8/IMG_6315_display_large.jpg",
+      "https://cdn.thingiverse.com/renders/72/74/28/92/ba/IMG_6615_display_large.jpg"
+
     ],
     tags: ["moderno", "interior", "maqueta"],
   },

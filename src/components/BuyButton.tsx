@@ -13,13 +13,14 @@ const BuyButton: React.FC<BuyButtonProps> = ({
   disabled = false,
 }) => {
   const handleClick = () => {
-    const phoneNumber = "593986510908"; // Número de WhatsApp sin el + y sin el 0 inicial
-    const message = `¡Hola! Estoy interesado en comprar *${productName}* por $${price}.`;
-    const encodedMessage = encodeURIComponent(message);
-    const url = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+  const phoneNumber = "593999727075";
+  const message = `Hola! Estoy interesado en comprar *${productName}* por $${price}.`;
+  const encodedMessage = encodeURIComponent(message);
+  const url = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}`;
 
-    window.open(url, "_blank");
-  };
+  window.open(url, "_blank");
+};
+
 
   return (
     <Button
