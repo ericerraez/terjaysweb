@@ -17,6 +17,9 @@ import decoracionImg from '../assets/decoracion.webp';
 import herramientasImg from '../assets/herramientas.webp';
 import gadgetsImg from '../assets/gadgets.png';
 import popularImg from '../assets/trending.webp';
+import Cosplay from '../library/cosplay';
+import cosplayImg from '../assets/cosplay.png';
+
 import minecraftImg from '../assets/minecraft.webp';
 import onepieceImg from '../assets/one-piece.avif';
 import dbzImg from '../assets/dbz.jpg';
@@ -310,6 +313,9 @@ const Printing = () => {
     { label: 'Días Especiales', img: sdImg, route: '/library/OcasionesEspeciales' }, 
     { label: 'Temporada', img: popularImg, route: '/library/season' },
     { label: 'Arquitectura', img: "https://res.cloudinary.com/dyqvus6nm/image/upload/v1749494606/White_and_Blue_Minimal_Clean_Architecture_Presentation_kwkxyp.png", route: '/library/arquitectura' },
+    { label: 'Cosplay', img: cosplayImg, route: '/library/cosplay' },
+ 
+
 
   ];
 
